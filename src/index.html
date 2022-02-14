@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--
+  Customize this policy to fit your own app's needs. For more guidance, see:
+      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+  Some notes:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+      * Enable inline JS: add 'unsafe-inline' to default-src
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+
+  <meta name="theme-color" content="#007aff">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Loading...</title>
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="static/icons/apple-touch-icon.png">
+  <link rel="icon" href="static/icons/favicon.png">
+  
+  
+  <!-- built styles file will be auto injected -->
+<style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  
+  border-top: 16px solid blue;
+  border-right: 16px solid green;
+  border-bottom: 16px solid red;
+  border-left: 16px solid pink;
+
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body>
+  <div id="app">
+    <center>数据读取中...</center>
+    <div id="loader"></div>
+    <script type="text/javascript">
+    function loadJs(){
+        var scriptTag = document.getElementById('loadScript');
+        var head = document.getElementsByTagName('head').item(0);
+        if(scriptTag) head.removeChild(scriptTag);
+        script = document.createElement('script');
+        script.src = "js/app.js"
+        script.type = 'text/javascript';
+        script.id = 'loadScript';
+        head.appendChild(script);
+    }
+
+    function loadCss(){
+        var cssTag = document.getElementById('loadCss');
+        var head = document.getElementsByTagName('head').item(0);
+        if(cssTag) head.removeChild(cssTag);
+        css = document.createElement('link');
+        css.href = "css/app.css";
+        css.rel = 'stylesheet';
+        css.type = 'text/css';
+        css.id = 'loadCss';
+        head.appendChild(css);
+    }
+     function showPage() {
+      //document.getElementById("loader").style.display = "none";
+     }
+    loadCss()
+    loadJs()
+  </script>
+  </div>
+  
+  <!-- built script files will be auto injected -->
+</body>
+</html>

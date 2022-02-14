@@ -1,0 +1,94 @@
+{
+  "name": "mahjong",
+  "private": true,
+  "version": "1.0.0",
+  "description": "mahjong",
+  "repository": "",
+  "license": "UNLICENSED",
+  "framework7": {
+    "cwd": "/Users/leeco/prj_2020/server/mahjong",
+    "type": [
+      "web"
+    ],
+    "name": "mahjong",
+    "framework": "vue",
+    "template": "tabs",
+    "cssPreProcessor": false,
+    "bundler": "webpack",
+    "webpack": {
+      "developmentSourceMap": true,
+      "productionSourceMap": true,
+      "hashAssets": false,
+      "preserveAssetsPaths": false,
+      "inlineAssets": true
+    },
+    "theming": {
+      "customColor": false,
+      "color": "#007aff",
+      "darkTheme": false,
+      "iconFonts": true,
+      "fillBars": false
+    },
+    "customBuild": false
+  },
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js",
+    "build-dev": "cross-env NODE_ENV=development node ./build/build.js",
+    "build-prod": "cross-env NODE_ENV=production node ./build/build.js",
+    "postinstall": "cpy './node_modules/framework7-icons/fonts/*.*' './src/fonts/'"
+  },
+  "browserslist": [
+    "Android >= 7",
+    "IOS >= 11",
+    "Safari >= 11",
+    "Chrome >= 49",
+    "Firefox >= 31",
+    "Samsung >= 5"
+  ],
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dom7": "^2.1.5",
+    "framework7": "^5.7.11",
+    "framework7-icons": "^3.0.1",
+    "framework7-vue": "^5.7.11",
+    "template7": "^1.4.2",
+    "vue": "^2.6.11",
+    "vue-avatar-cropper": "^1.0.6",
+    "vuex": "^3.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-syntax-jsx": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/runtime": "^7.11.2",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-transform-vue-jsx": "^4.0.1",
+    "chalk": "^2.4.2",
+    "copy-webpack-plugin": "^5.1.1",
+    "cpy-cli": "^3.1.1",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.6.0",
+    "file-loader": "^4.3.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "ora": "^4.1.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "rimraf": "^3.0.2",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^2.3.8",
+    "url-loader": "^2.3.0",
+    "vue-loader": "^15.9.3",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
